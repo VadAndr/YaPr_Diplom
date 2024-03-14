@@ -1,4 +1,5 @@
 SELECT c.login, 
-     COUNT(o."firstName") AS ordersindelivery 
-FROM "Couriers" AS c LEFT JOIN "Orders" AS o ON c.ID = o."courierId" WHERE o."inDelivery" = true 
+     COUNT(o."id") AS ordersindelivery 
+FROM "Couriers" AS c LEFT JOIN "Orders" AS o ON c.ID = o."courierId" 
+WHERE o."inDelivery" = true 
 GROUP BY c.login;
